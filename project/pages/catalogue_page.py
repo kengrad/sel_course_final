@@ -15,3 +15,6 @@ class CataloguePage(BasePage):
         assert self.is_element_present(*CataloguePageLocators.CATALOGUE_FORM), "Catalogue form  is not presented"
         assert True
 
+    def go_to_product_item(self):
+        link = self.browser.find_element(*CataloguePageLocators.PRODUCT_ITEM)
+        link.click()
