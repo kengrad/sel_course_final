@@ -1,7 +1,5 @@
 from .base_page import BasePage
-from selenium.webdriver.common.by import By
 from .locators import MainPageLocators
-from project.pages.login_page import LoginPage
 
 
 class MainPage(BasePage):
@@ -13,3 +11,9 @@ class MainPage(BasePage):
     def should_be_login_link(self):
         assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
 
+    def go_to_catalogue_page(self):
+        link = self.browser.find_element(*MainPageLocators.CATALOGUE_LINK)
+        link.click()
+
+    def should_be_catalogue_link(self):
+        assert self.is_element_present(*MainPageLocators.CATALOGUE_LINK), "Login link is not presented"
