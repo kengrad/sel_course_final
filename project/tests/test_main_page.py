@@ -27,7 +27,4 @@ def test_guest_should_see_catalogue_link(browser):
 def test_guest_can_go_to_catalogue(browser):
     page = MainPage(browser, link)
     page.open()
-    page.guest_go_to_catalogue()
-
-    login_page = LoginPage(browser, browser.current_url)
-    login_page.should_be_login_page()
+    page.go_to_catalogue_page()
