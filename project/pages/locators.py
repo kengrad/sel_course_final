@@ -25,8 +25,11 @@ class ProductPageLocators():
     PRODUCT_ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "#add_to_basket_form > button")
     PRODUCT_ADD_TO_CART_NAME_IN_CART = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div > strong")
     PRODUCT_ADD_TO_CART_NAME = (By.CSS_SELECTOR, "#content_inner > article > div.row > div.col-sm-6.product_main > h1")
-    PRODUCT_TEXT_PRICE_CART = (By.CSS_SELECTOR, "#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div")
-    PRODUCT_PRICE_CART = (By.CSS_SELECTOR, "#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > p:nth-child(1) > strong")
+    PRODUCT_TEXT_PRICE_CART = (
+        By.CSS_SELECTOR, "#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div")
+    PRODUCT_PRICE_CART = (
+        By.CSS_SELECTOR,
+        "#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > p:nth-child(1) > strong")
     PRODUCT_PRICE = (By.CSS_SELECTOR, "#content_inner > article > div.row > div.col-sm-6.product_main > p.price_color")
     PRODUCT_PRICE_WITHOUT_NDS = (By.CSS_SELECTOR, "#content_inner > article > table > tbody > tr:nth-child(3) > td")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
@@ -35,3 +38,11 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+
+class BasketPageLocators():
+    BASKET_LINK = (
+        By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span")
+    MESSAGE_PRODUCTS_AT_BASKET = (By.CSS_SELECTOR, "#content_inner > div.basket-title.hidden-xs > div > h2")
+    BASKET_ITEMS = (By.CSS_SELECTOR, "#basket_formset > div")
+    MESSAGE_BASKET_EMPTY = (By.CSS_SELECTOR, "#content_inner > p")

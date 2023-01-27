@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from .locators import MainPageLocators
+from .locators import MainPageLocators, BasketPageLocators
 
 
 class MainPage(BasePage):
@@ -12,3 +12,4 @@ class MainPage(BasePage):
 
     def should_be_catalogue_link(self):
         assert self.is_element_present(*MainPageLocators.CATALOGUE_LINK), "Catalogue link is not presented"
+
