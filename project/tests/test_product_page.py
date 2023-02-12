@@ -1,12 +1,36 @@
 import pytest
 
+
 from project.pages.login_page import LoginPage
 from project.pages.product_page import ProductPage
-from project.pages.main_page import MainPage
 from project.pages.basket_page import BasketPage
-from project.pages.catalogue_page import CataloguePage
 import time
 from project.settings import *
+
+
+class TestUserAddToBasketFromProductPage():
+    @pytest.fixture(scope="function", autouse=True)
+    def setup(self, browser):
+        qwe = LoginPage(browser, link)
+        qwe.new_reg(browser)
+        yield
+
+    def test_user_cant_see_success_message(self, browser):
+        product_page = ProductPage(browser, link)
+        product_page.open()
+        product_page.should_be_product_page()
+        product_page.should_not_be_success_message()
+
+    def test_user_can_add_product_to_basket(self, browser):
+        product_page = ProductPage(browser, link_new_year)
+        product_page.open()
+        product_page.should_be_product_page()
+        product_page.add_to_cart()
+        product_page.solve_quiz_and_get_code()
+        product_page.cart_name_product_compare()
+        product_page.text_price_cart()
+        product_page.price_cart_and_product_compare()
+        product_page.price_cart_and_without_nds_compare()
 
 
 def test_guest_can_add_product_to_basket(browser):
