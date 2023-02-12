@@ -16,34 +16,34 @@ class TestUserAddToBasketFromProductPage():
         yield
 
     def test_user_cant_see_success_message(self, browser):
-        product_page = ProductPage(browser, link)
-        product_page.open()
-        product_page.should_be_product_page()
-        product_page.should_not_be_success_message()
+        page = ProductPage(browser, link)
+        page.open()
+        page.should_be_product_page()
+        page.should_not_be_success_message()
 
     def test_user_can_add_product_to_basket(self, browser):
-        product_page = ProductPage(browser, link_new_year)
-        product_page.open()
-        product_page.should_be_product_page()
-        product_page.add_to_cart()
-        product_page.solve_quiz_and_get_code()
-        product_page.cart_name_product_compare()
-        product_page.text_price_cart()
-        product_page.price_cart_and_product_compare()
-        product_page.price_cart_and_without_nds_compare()
+        page = ProductPage(browser, link_new_year)
+        page.open()
+        page.should_be_product_page()
+        page.add_to_cart()
+        page.solve_quiz_and_get_code()
+        page.cart_name_product_compare()
+        page.text_price_cart()
+        page.price_cart_and_product_compare()
+        page.price_cart_and_without_nds_compare()
 
 
 def test_guest_can_add_product_to_basket(browser):
-    product_page = ProductPage(browser, link_new_year)
-    product_page.open()
-    product_page.should_be_product_page()
-    product_page.add_to_cart()
-    product_page.solve_quiz_and_get_code()
+    page = ProductPage(browser, link_new_year)
+    page.open()
+    page.should_be_product_page()
+    page.add_to_cart()
+    page.solve_quiz_and_get_code()
     # time.sleep(15)
-    product_page.cart_name_product_compare()
-    product_page.text_price_cart()
-    product_page.price_cart_and_product_compare()
-    product_page.price_cart_and_without_nds_compare()
+    page.cart_name_product_compare()
+    page.text_price_cart()
+    page.price_cart_and_product_compare()
+    page.price_cart_and_without_nds_compare()
 
 
 @pytest.mark.parametrize('link', link_list)
@@ -59,7 +59,7 @@ def test_guest_can_add_product_to_basket_link_list(browser, link):
     product_page.price_cart_and_product_compare()
     product_page.price_cart_and_without_nds_compare()
 
-
+@pytest.mark.xfail(reason="exercise 4.3 (6)")
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     product_page = ProductPage(browser, link)
     product_page.open()
@@ -75,7 +75,7 @@ def test_guest_cant_see_success_message(browser):
     product_page.should_be_product_page()
     product_page.should_not_be_success_message()
 
-
+@pytest.mark.xfail(reason="exercise 4.3 (6)")
 def test_message_disappeared_after_adding_product_to_basket(browser):
     product_page = ProductPage(browser, link)
     product_page.open()

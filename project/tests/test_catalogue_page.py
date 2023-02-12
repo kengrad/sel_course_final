@@ -8,5 +8,5 @@ def test_guest_should_see_catalogue(browser):
     page = MainPage(browser, link)
     page.open()
     page.go_to_catalogue_page()
-    catalogue_page = CataloguePage(browser, browser.current_url)
-    catalogue_page.should_be_catalogue_page()
+    page = CataloguePage(browser, browser.current_url)
+    page.should_be_catalogue_page()

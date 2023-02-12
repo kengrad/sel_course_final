@@ -1,10 +1,7 @@
 from project.pages.base_page import BasePage
 # link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
 import pytest
-import random
 
-a = random.randrange(0, 1111)
-email = f"12332{a}@gmail.com"
 password = "Kabaju081"
 link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
 link_new_year = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"

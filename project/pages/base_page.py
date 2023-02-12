@@ -5,15 +5,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from .locators import BasePageLocators, BasketPageLocators
 import math
 
-from project.settings import *
-
-
-
 
 
 class BasePage():
-
-
 
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
