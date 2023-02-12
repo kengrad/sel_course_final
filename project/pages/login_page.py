@@ -1,4 +1,3 @@
-import time
 from project.settings import *
 import faker
 
@@ -6,12 +5,9 @@ from .base_page import BasePage
 from .locators import LoginPageLocators
 
 
-
-
-
 class LoginPage(BasePage):
 
-    def new_reg(self,browser):
+    def new_reg(self, browser):
         f = faker.Faker()
         email = f.email()
         login_page = LoginPage(browser, link)

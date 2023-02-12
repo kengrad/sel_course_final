@@ -1,10 +1,6 @@
-import pytest
-
-
 from project.pages.login_page import LoginPage
 from project.pages.product_page import ProductPage
 from project.pages.basket_page import BasketPage
-import time
 from project.settings import *
 
 
@@ -39,7 +35,6 @@ def test_guest_can_add_product_to_basket(browser):
     page.should_be_product_page()
     page.add_to_cart()
     page.solve_quiz_and_get_code()
-    # time.sleep(15)
     page.cart_name_product_compare()
     page.text_price_cart()
     page.price_cart_and_product_compare()
@@ -53,11 +48,11 @@ def test_guest_can_add_product_to_basket_link_list(browser, link):
     product_page.should_be_product_page()
     product_page.add_to_cart()
     product_page.solve_quiz_and_get_code()
-    # time.sleep(10)
     product_page.cart_name_product_compare()
     product_page.text_price_cart()
     product_page.price_cart_and_product_compare()
     product_page.price_cart_and_without_nds_compare()
+
 
 @pytest.mark.xfail(reason="exercise 4.3 (6)")
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
@@ -65,7 +60,6 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     product_page.open()
     product_page.should_be_product_page()
     product_page.add_to_cart()
-    # time.sleep(99)
     product_page.should_not_be_success_message()
 
 
@@ -75,13 +69,13 @@ def test_guest_cant_see_success_message(browser):
     product_page.should_be_product_page()
     product_page.should_not_be_success_message()
 
+
 @pytest.mark.xfail(reason="exercise 4.3 (6)")
 def test_message_disappeared_after_adding_product_to_basket(browser):
     product_page = ProductPage(browser, link)
     product_page.open()
     product_page.should_be_product_page()
     product_page.add_to_cart()
-    # time.sleep(99)
     product_page.should_success_message_is_disappeared()
 
 

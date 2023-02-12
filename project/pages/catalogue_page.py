@@ -11,7 +11,8 @@ class CataloguePage(BasePage):
         assert "catalogue" in self.browser.current_url, "Catalogue url is not correct"
 
     def should_be_catalogue_form(self):
-        assert self.is_element_present(*CataloguePageLocators.CATALOGUE_FORM_SIDE), "Catalogue form side is not presented"
+        assert self.is_element_present(
+            *CataloguePageLocators.CATALOGUE_FORM_SIDE), "Catalogue form side is not presented"
         assert self.is_element_present(*CataloguePageLocators.CATALOGUE_FORM), "Catalogue form  is not presented"
         assert True
 

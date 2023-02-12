@@ -22,7 +22,6 @@ class CataloguePageLocators():
     CATALOGUE_FORM = (By.CSS_SELECTOR, "#default > div.container-fluid.page > div > div > div")
 
 
-# content_inner > article > div.row > div.col-sm-6.product_main > h1
 class ProductPageLocators():
     PRODUCT_FORM_ITEM = (By.CSS_SELECTOR, "#product_gallery > div > div > div")
     PRODUCT_FORM_INFO = (By.CSS_SELECTOR, "#content_inner > article > div.row > div.col-sm-6.product_main")

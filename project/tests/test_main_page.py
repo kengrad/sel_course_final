@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from project.pages.main_page import MainPage
