@@ -13,4 +13,8 @@ class BasketPage(BasePage):
 
     def should_be_basket_empty_message(self):
         text = self.browser.find_element(*BasketPageLocators.MESSAGE_BASKET_EMPTY).text
-        assert 'Ваша корзина пуста' in text, "Basket empty message is presented"
+        url = self.browser.current_url
+        if 'http://selenium1py.pythonanywhere.com/ru' in url:
+            assert 'Ваша корзина пуста' in text, "Basket empty message is presented"
+        elif 'http://selenium1py.pythonanywhere.com/en' in url:
+            assert 'Your basket is empty' in text, "Basket empty message is presented"

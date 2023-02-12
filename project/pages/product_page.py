@@ -32,7 +32,12 @@ class ProductPage(BasePage):
 
     def text_price_cart(self):
         text = self.browser.find_element(*ProductPageLocators.PRODUCT_TEXT_PRICE_CART).text
-        assert "Стоимость корзины теперь составляет" in text, "not valid text"
+        url = self.browser.current_url
+        if 'http://selenium1py.pythonanywhere.com/ru' in url:
+            assert "Стоимость корзины теперь составляет" in text, "not valid text"
+        if 'http://selenium1py.pythonanywhere.com/en' in url:
+            assert "Your basket total is now" in text, "not valid text"
+
 
     def price_cart_and_product_compare(self):
         price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
